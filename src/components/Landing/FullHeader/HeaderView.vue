@@ -23,7 +23,7 @@ export default {};
   height: 580px;
   background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/landing_bg.png") no-repeat;
   background-position: bottom right;
-  background-size: 70% 100%;
+  background-size: contain;
 }
 .HeaderView > .define {
   position: absolute;
