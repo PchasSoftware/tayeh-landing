@@ -44,7 +44,7 @@ export default {
 .BlogPost > .img-part {
   width: 100%;
   height: 140px;
-  background: url("../../../assets/images/Screen1.png") no-repeat;
+  background: url("../../../assets/images/Screen1.jpg") no-repeat;
   background-size: cover;
 }
 .BlogPost .par {
