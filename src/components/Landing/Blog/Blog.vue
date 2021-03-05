@@ -79,9 +79,6 @@ export default {
   .Blog > .title {
     margin-bottom: 20px !important;
   }
-  .Blog > .title > h2 {
-    font-size: 18px;
-  }
   .Blog > .title > p {
     font-size: 12px;
   }

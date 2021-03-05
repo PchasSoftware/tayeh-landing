@@ -12,6 +12,7 @@
 <script>
 import FullHeader from "./components/Landing/FullHeader/FullHeader";
 import Footer from "./components/Landing/Footer";
+import Blog from './components/Landing/Blog/Blog';
 
 export default {
   name: "Landing",
@@ -19,7 +20,7 @@ export default {
     FullHeader,
     Services: () => import('./components/Landing/Services/Services'),
     Posts: () => import('./components/Landing/Posts/Posts'),
-    Blog: () => import('./components/Landing/Blog/Blog'),
+    Blog,
     Businesses: () => import('./components/Landing/TopBusinesses/Businesses'),
     Footer
   },
