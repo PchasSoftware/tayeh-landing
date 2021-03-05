@@ -13,6 +13,7 @@
 
 <script>
 import PhotoPost from "./PhotoPost";
+import PostObject from "../../../assets/jsons/Posts.json";
 export default {
   name: "Posts",
   components: {
@@ -20,24 +21,17 @@ export default {
   },
   data() {
     return {
-      posts: [
-        {
-          title: "فروش محصولات از طریق شبکه های اجتماعی",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است",
-          img: "woman_touching_mobile.svg",
-          order: "right",
-        },
-        {
-          title: "مدیریت کارکنان و آنالیز داده های فروشگاه",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است",
-          img: "woman_teaching_man.svg",
-          order: "left",
-        },
-      ],
+      posts: [],
     };
   },
+  methods: {
+    getPosts () {
+      this.posts = PostObject;
+    },
+  },
+  mounted() {
+    this.getPosts();
+  }
 };
 </script>
 

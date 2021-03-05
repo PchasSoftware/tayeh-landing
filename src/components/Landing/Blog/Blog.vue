@@ -33,6 +33,7 @@
 
 <script>
 import BlogPost from "./BlogPost";
+import BlogPostObjects from "../../../assets/jsons/BlogPosts.json";
 export default {
   name: "Blog",
   components: {
@@ -40,42 +41,17 @@ export default {
   },
   data() {
     return {
-      BPosts: [
-        {
-          title: "چگونه محصولات را در پنل آپلود کنیم؟",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_payment.svg",
-          date: "10 بهمن 1399",
-          link: "",
-        },
-        {
-          title: "چگونه محصولات را در پنل آپلود کنیم؟",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_payment.svg",
-          date: "10 بهمن 1399",
-          link: "",
-        },
-        {
-          title: "چگونه محصولات را در پنل آپلود کنیم؟",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_payment.svg",
-          date: "10 بهمن 1399",
-          link: "",
-        },
-        {
-          title: "چگونه محصولات را در پنل آپلود کنیم؟",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_payment.svg",
-          date: "10 بهمن 1399",
-          link: "",
-        },
-      ],
+      BPosts: [],
     };
   },
+  methods: {
+    getBPosts () {
+      this.BPosts = BlogPostObjects;
+    },
+  },
+  mounted() {
+    this.getBPosts();
+  }
 };
 </script>
 

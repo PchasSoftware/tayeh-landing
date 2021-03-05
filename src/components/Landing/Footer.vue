@@ -10,7 +10,8 @@
         <div class="pchas-part"></div>
         <div class="ty-flex fs-12 fw-300 last-line ty-justify-center mt-3">
           <span>طراحی شده با </span>
-          <div class="heart"></div>
+          <!-- <div class="heart"></div> -->
+          <i class="ty-icon ty-icon-heart fs-10 ty-color-danger mx-2"/>
           <span>در استودیو پیچاز</span>
         </div>
       </div>
@@ -73,13 +74,6 @@ export default {
   align-items: center;
   position: relative;
   right: 15px;
-}
-.Footer > .container .heart {
-  width: 25px;
-  height: 25px;
-  background: url("../../assets/images/love.svg") no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 @media (max-width: 1024px) {
   .Footer > .container {

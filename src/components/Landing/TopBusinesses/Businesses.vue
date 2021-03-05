@@ -14,10 +14,14 @@
             <Slider :businesses="businesses" :right="right" />
           </div>
         </div>
-        <div class="arrows ty-flex">
+        <div class="arrows ty-flex ty-gap-10">
+          <ty-button class="arrow-ic" radius="10px" icon="ty-icon-arrow-right" @click="rightHandler"/>
+          <ty-button class="arrow-ic" radius="10px" icon="ty-icon-arrow-left" @click="leftHandler"/>
+        </div>
+        <!-- <div class="arrows ty-flex">
           <div class="right-icon arrow-ic" @click="rightHandler"></div>
           <div class="left-icon arrow-ic" @click="leftHandler"></div>
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="bottom-section ty-flex">
@@ -47,6 +51,7 @@
 <script>
 import Slider from "./Slider";
 import JobsState from "./JobsState";
+import BusinessesObject from "../../../assets/jsons/Businesses.json";
 export default {
   name: "Businesses",
   components: {
@@ -56,64 +61,8 @@ export default {
   data() {
     return {
       right: 0,
-      businesses: [
-        {
-          name: "فروشگاه مرسی لیدی",
-          website_name: "www.mersilady.ir",
-          website_link: "#",
-          avatar: "../../../assets/images/Screen2.png",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.",
-        },
-        {
-          name: "فروشگاه مرسی لیدی",
-          website_name: "www.mersilady.ir",
-          website_link: "#",
-          avatar: "../../../assets/images/Screen2.png",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.",
-        },
-        {
-          name: "فروشگاه مرسی لیدی",
-          website_name: "www.mersilady.ir",
-          website_link: "#",
-          avatar: "../../../assets/images/Screen2.png",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.",
-        },
-        {
-          name: "فروشگاه مرسی لیدی",
-          website_name: "www.mersilady.ir",
-          website_link: "#",
-          avatar: "../../../assets/images/Screen2.png",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد.",
-        },
-      ],
-      states: [
-        {
-          title: "تعداد کسب و کارها",
-          value: "21",
-          icon: "landing_work.svg",
-        },
-        {
-          title: "تعداد فروش",
-          value: "1350",
-          icon: "landing_buy.svg",
-        },
-        {
-          title: "تعداد خرید",
-          value: "1126",
-          icon: "landing_bag.svg",
-        },
-        {
-          title: "مجموع سود فروشگاه ها",
-          value: "67،350،000",
-          icon: "landing_discount.svg",
-          span: "true",
-          span_value: "تومان",
-        },
-      ],
+      businesses: [],
+      states: [],
     };
   },
   methods: {
@@ -132,7 +81,17 @@ export default {
         this.right = this.right + 100;
       }
     },
+    getBusinesses () {
+      this.businesses = BusinessesObject.businesses;
+    },
+    getStates () {
+      this.states = BusinessesObject.states;
+    }
   },
+  mounted() {
+    this.getBusinesses()
+    this.getStates()
+  }
 };
 </script>
 
@@ -195,31 +154,16 @@ export default {
   transform: translateX(100%);
 }
 .Businesses > .top-section > .left-side > .arrows > .arrow-ic {
-  width: 45px;
-  height: 45px;
-  border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   opacity: 0.6;
-  background-size: 20px;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: 0.2s;
 }
 .Businesses > .top-section > .left-side > .arrows > .arrow-ic:hover {
   background-color: rgba(255, 255, 255, 0.2);
   opacity: 1;
 }
-.Businesses > .top-section > .left-side > .arrows > .arrow-ic.right-icon {
-  background-image: url("../../../assets/images/arrow_forward_ios.svg");
-  background-position: 55% 50%;
-}
-.Businesses > .top-section > .left-side > .arrows > .arrow-ic.left-icon {
-  background-image: url("../../../assets/images/arrow_back_ios.svg");
-  margin-right: 17px;
-  background-position: 45% 50%;
-}
 .Businesses > .bottom-section {
   height: 530px;
+  background-color: #3181d2;
   background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/landing_blue_bg.jpg")
     no-repeat;
   background-size: cover;

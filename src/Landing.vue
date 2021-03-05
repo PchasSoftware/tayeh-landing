@@ -1,30 +1,26 @@
 <template>
   <div>
-    <FullHeader />
-    <Services />
-    <Posts />
-    <Businesses />
-    <Blog />
-    <Footer />
+    <FullHeader v-once/>
+    <Services/>
+    <Posts/>
+    <Businesses/>
+    <Blog/>
+    <Footer v-once/>
   </div>
 </template>
 
 <script>
 import FullHeader from "./components/Landing/FullHeader/FullHeader";
-import Services from "./components/Landing/Services/Services";
-import Posts from "./components/Landing/Posts/Posts";
-import Blog from "./components/Landing/Blog/Blog";
-import Businesses from "./components/Landing/TopBusinesses/Businesses";
 import Footer from "./components/Landing/Footer";
 
 export default {
   name: "Landing",
   components: {
     FullHeader,
-    Services,
-    Posts,
-    Blog,
-    Businesses,
+    Services: () => import('./components/Landing/Services/Services'),
+    Posts: () => import('./components/Landing/Posts/Posts'),
+    Blog: () => import('./components/Landing/Blog/Blog'),
+    Businesses: () => import('./components/Landing/TopBusinesses/Businesses'),
     Footer
   },
 };
