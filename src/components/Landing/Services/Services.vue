@@ -6,15 +6,19 @@
         با ثبت نام در تایه به تمامی امکانات زیر در پنل کاربری خود دسترسی دارید
       </p>
     </div>
-    <div class="ty-flex ty-flex-wrap ty-space-between">
-      <Service
+    <ty-row :gutter="10">
+      <ty-col
+        :xs="24"
+        :sm="12"
+        :md="6"
+        :lg="6"
+        :xl="6"
         v-for="(item, index) in servs"
         :key="index"
-        :title="item.title"
-        :explain="item.explain"
-        :img="item.img"
-      />
-    </div>
+      >
+        <Service :title="item.title" :explain="item.explain" :img="item.img" />
+      </ty-col>
+    </ty-row>
   </div>
 </template>
 
@@ -66,5 +70,12 @@ export default {
   width: 85%;
   margin: 0 auto;
   padding-top: 80px;
+}
+@media (max-width: 425px) {
+  .Services {
+    width: 85%;
+    margin: 0 auto;
+    padding-top: 0px;
+  }
 }
 </style>

@@ -1,22 +1,30 @@
 <template>
   <div class="Blog">
-    <div class="text-center mb-5">
+    <div class="title text-center mb-5">
       <h2 class="fw-500 my-0">آخرین مطالب</h2>
       <p class="fw-300 mt-2">
         آموزش های کار با پنل و اخبار تایه را در این بخش بخوانید
       </p>
     </div>
-    <div class="ty-flex ty-flex-wrap ty-space-between">
-      <BlogPost
+    <ty-row :gutter="10">
+      <ty-col
+        :xs="24"
+        :sm="12"
+        :md="6"
+        :lg="6"
+        :xl="6"
         v-for="(item, index) in BPosts"
         :key="index"
-        :title="item.title"
-        :explain="item.explain"
-        :img="item.img"
-        :date="item.date"
-        :link="item.link"
-      />
-    </div>
+      >
+        <BlogPost
+          :title="item.title"
+          :explain="item.explain"
+          :img="item.img"
+          :date="item.date"
+          :link="item.link"
+        />
+      </ty-col>
+    </ty-row>
     <div class="text-center mt-4 pt-2">
       <button class="btn-more fw-500">مطالب بیشتر</button>
     </div>
@@ -86,5 +94,20 @@ export default {
   border: none;
   border-radius: 10px;
   padding: 10px 40px;
+}
+@media (max-width: 425px) {
+  .Blog {
+    padding-top: 50px;
+    width: 92%;
+  }
+  .Blog > .title {
+    margin-bottom: 20px !important;
+  }
+  .Blog > .title > h2 {
+    font-size: 18px;
+  }
+  .Blog > .title > p {
+    font-size: 12px;
+  }
 }
 </style>

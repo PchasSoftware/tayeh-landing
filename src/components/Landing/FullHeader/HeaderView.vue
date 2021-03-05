@@ -21,7 +21,8 @@ export default {};
 <style scoped>
 .HeaderView > .img-part {
   height: 580px;
-  background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/landing_bg.png") no-repeat;
+  background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/landing_bg.png")
+    no-repeat;
   background-position: bottom right;
   background-size: contain;
 }
@@ -51,5 +52,66 @@ export default {};
 }
 .HeaderView > .define > .btn-service > a {
   color: #409eff;
+}
+@media (max-width: 1270px) {
+  .HeaderView > .define {
+    right: 63%;
+    top: 1%;
+  }
+}
+@media (max-width: 1024px) {
+  .HeaderView > .img-part {
+    height: 500px;
+  }
+}
+@media (max-width: 970px) {
+  .HeaderView > .img-part {
+    height: 400px;
+  }
+  .HeaderView > .define > .def-head {
+    font-size: 30px;
+  }
+  .HeaderView > .define > .par {
+    font-size: 14px;
+  }
+  .HeaderView > .define > .btn-service {
+    font-size: 14px;
+    margin-top: 0 !important;
+  }
+}
+@media (max-width: 770px) {
+  .HeaderView > .define {
+    width: 92%;
+    margin: 0 auto;
+    position: static;
+    text-align: center;
+  }
+  .HeaderView > .img-part {
+    width: 100%;
+    height: 400px;
+    background-position: top;
+    margin-top: 30px;
+    background-size: cover;
+  }
+  .HeaderView > .define > .def-head {
+    font-size: 28px;
+  }
+  .HeaderView > .define > .par {
+    font-size: 12px;
+  }
+  .HeaderView > .define > .btn-service {
+    font-size: 12px;
+    margin-top: 0 !important;
+  }
+  @media (max-width: 425px) {
+    .HeaderView > .define {
+      text-align: right;
+    }
+    .HeaderView > .img-part {
+    height: 320px;
+    background-size: contain;
+  }
+  }
+
 }
 </style>

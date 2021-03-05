@@ -30,7 +30,6 @@ export default {
   name: "Slider",
   props: ["businesses", "right"],
 };
-
 </script>
 
 <style scoped>
@@ -38,7 +37,8 @@ export default {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .Slider > .gallery {
   height: 100%;
@@ -65,5 +65,23 @@ export default {
 }
 .Slider > .gallery > .slide .web-link {
   color: #409eff;
+}
+@media (max-width: 425px) {
+  .Slider {
+  overflow:hidden;
+}
+  .Slider > .gallery > .slide > .summary {
+    display: block;
+  }
+  .Slider > .gallery > .slide {
+    padding: 0;
+    text-align: center;
+  }
+  .Slider > .gallery > .slide .img-part{
+    position: relative;
+    right: 50%;
+    transform: translateX(50%);
+    margin: 10px 0;
+  }
 }
 </style>

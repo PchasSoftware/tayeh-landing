@@ -1,6 +1,6 @@
 <template>
   <div class="PhotoPost ty-flex ty-flex-wrap">
-    <div :class="['side-width',order === 'right' ? 'right' : 'order-2']">
+    <div :class="['side-width', order === 'right' ? 'right' : 'order-2']">
       <h3 class="post-head fs-22 fw-500 mb-0">
         {{ title }}
       </h3>
@@ -8,7 +8,7 @@
         {{ explain }}
       </p>
     </div>
-    <div :class="['side-width',order === 'left' ? 'right order-1' : '']">
+    <div :class="['side-width', order === 'left' ? 'right order-1' : '']">
       <div class="img-part">
         <img :src="static_server + img" alt="my-post" />
       </div>
@@ -46,10 +46,10 @@ export default {
 .PhotoPost > .right {
   direction: ltr;
 }
-.order-1{
+.order-1 {
   order: 1;
 }
-.order-2{
+.order-2 {
   order: 2;
 }
 .PhotoPost > .side-width > .post-head {
@@ -62,5 +62,39 @@ export default {
 .PhotoPost > .side-width > .par {
   max-width: 265px;
   line-height: 30px;
+}
+.PhotoPost .img-part > img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 425px) {
+  .PhotoPost {
+    display: block;
+  }
+  .PhotoPost > .side-width {
+    width: 100%;
+    padding: 0;
+  }
+  .PhotoPost > .right {
+    direction: rtl;
+  }
+  .PhotoPost > .side-width > .post-head {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+  }
+  .PhotoPost > .side-width > .par {
+    width: 85%;
+    margin: 0 auto;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px !important;
+  }
+  .PhotoPost .img-part {
+    margin-top: 20px;
+  }
+  .PhotoPost + .PhotoPost {
+    margin-top: 80px;
+  }
 }
 </style>

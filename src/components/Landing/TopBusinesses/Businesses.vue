@@ -1,6 +1,6 @@
 <template>
   <div class="Businesses">
-    <div class="top-section ty-flex">
+    <div class="top-section ty-flex ty-flex-wrap">
       <div class="right-side pt-4">
         <h3 class="post-head fs-22 fw-500 mb-0">کسب و کارهای برتر تایه</h3>
         <p class="fw-300 par mt-3">
@@ -22,7 +22,7 @@
     </div>
     <div class="bottom-section ty-flex">
       <div class="data-bound">
-        <div class="ty-flex ty-flex-wrap ty-space-between">
+        <div class="jobs ty-flex ty-flex-wrap ty-space-between">
           <JobsState
             v-for="(item, index) in states"
             :key="index"
@@ -241,8 +241,130 @@ export default {
   border: none;
   background-color: rgba(255, 255, 255, 0.1);
   border: 1px solid;
-   border-image-source: linear-gradient(to right, #ffffff, rgba(133, 198, 255, 0), rgba(255, 255, 255, 0.86));
+  border-image-source: linear-gradient(
+    to right,
+    #ffffff,
+    rgba(133, 198, 255, 0),
+    rgba(255, 255, 255, 0.86)
+  );
   border-image-slice: 1;
   margin-bottom: 60px;
+}
+@media (max-width: 1100px) {
+  .Businesses > .top-section > .left-side > .outer-box {
+    width: 95%;
+  }
+  .Businesses > .top-section > .left-side > .outer-box > .inter-box {
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .Businesses > .top-section {
+    top: 60px;
+  }
+  .Businesses > .top-section > .right-side {
+    width: 35%;
+    padding: 0 15px;
+  }
+  .Businesses > .top-section > .left-side {
+    width: 65%;
+    padding: 0 15px;
+  }
+  .Businesses > .top-section > .left-side > .outer-box {
+    height: 310px;
+  }
+  .Businesses > .top-section > .left-side > .outer-box > .inter-box {
+    height: 310px;
+  }
+  .Businesses > .bottom-section .jobs {
+    justify-content: flex-start;
+  }
+  .Businesses > .bottom-section .bottom-par {
+    margin-top: 50px;
+  }
+  .Businesses > .bottom-section .btn-start {
+    margin-bottom: 40px;
+  }
+}
+@media (max-width: 768px) {
+  .Businesses > .top-section {
+    display: block;
+    width: 92%;
+    margin: 0 auto;
+    top: 0;
+    padding: 40px 0;
+  }
+  .Businesses > .top-section > .right-side {
+    width: 100%;
+    direction: rtl;
+    text-align: center;
+    padding: 0;
+  }
+  .Businesses > .top-section > .left-side {
+    width: 100%;
+    padding: 0;
+  }
+  .Businesses > .top-section > .right-side > .post-head {
+    max-width: 100%;
+    font-size: 18px;
+  }
+  .Businesses > .top-section > .right-side > .par {
+    max-width: 100%;
+    font-size: 14px;
+  }
+  .Businesses > .top-section > .left-side > .outer-box {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-radius: none;
+    margin-right: 0;
+  }
+  .Businesses > .top-section > .left-side > .outer-box > .inter-box {
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+    border-radius: none;
+    top: 0;
+    right: 0;
+  }
+  .Businesses > .top-section > .left-side > .arrows {
+    position: static;
+    transform: translateX(0);
+    justify-content: center;
+    margin-top: 15px;
+  }
+  .Businesses > .top-section > .left-side > .arrows > .arrow-ic {
+    background-color: #ebeff8;
+    opacity: 0.5;
+  }
+  .Businesses > .top-section > .left-side > .arrows > .arrow-ic:hover {
+    background-color: #ebeff8;
+    opacity: 1;
+  }
+  .Businesses > .top-section > .left-side > .arrows > .arrow-ic.right-icon {
+    background-image: url("../../../assets/images/arrow_forward_blue.svg");
+  }
+  .Businesses > .top-section > .left-side > .arrows > .arrow-ic.left-icon {
+    background-image: url("../../../assets/images/arrow_back_blue.svg");
+  }
+  .Businesses > .bottom-section {
+    height: 490px;
+  }
+  .Businesses > .bottom-section .bottom-par {
+    font-size: 16px;
+  }
+  @media (max-width: 425px) {
+    .Businesses > .bottom-section {
+      display: block;
+      height: 1030px;
+      background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/landing_blue_bg_mobile.jpg")
+        no-repeat;
+      background-size: cover;
+    }
+    .Businesses > .bottom-section .jobs {
+      display: block;
+      padding-top: 45px;
+    }
+  }
 }
 </style>

@@ -34,7 +34,6 @@ export default {
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 15px;
-  width: 23.5%;
   transition: 0.2s;
 }
 .BlogPost:hover {
@@ -74,5 +73,23 @@ export default {
   padding-left: 19px;
   background: url("../../../assets/images/more.svg") no-repeat;
   background-position: 0% 80%;
+}
+@media (max-width: 425px) {
+  .BlogPost {
+    width: 85%;
+    margin: 0 auto;
+    border: 1px solid #f2f2f2;
+    box-shadow: 0 15px 100px 0 rgba(18, 19, 26, 0.05);
+    transition: 0s;
+    margin-top: 25px;
+  }
+  .BlogPost:hover {
+    transform: scale(1);
+  }
+  .BlogPost .details {
+    visibility: visible;
+    opacity: 1;
+    transition: 0s;
+  }
 }
 </style>

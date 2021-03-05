@@ -27,7 +27,6 @@ export default {
 <style scoped>
 .Service {
   border: 1px solid transparent;
-  width: 23.5%;
   padding: 35px 30px 30px 30px;
   border-radius: 10px;
   transition: 0.2s;

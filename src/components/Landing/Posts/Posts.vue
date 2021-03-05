@@ -26,14 +26,14 @@ export default {
           explain:
             "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است",
           img: "woman_touching_mobile.svg",
-          order: "right"
+          order: "right",
         },
         {
           title: "مدیریت کارکنان و آنالیز داده های فروشگاه",
           explain:
             "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است",
           img: "woman_teaching_man.svg",
-          order: "left"
+          order: "left",
         },
       ],
     };
@@ -44,5 +44,12 @@ export default {
 <style scoped>
 .Posts {
   padding-top: 80px;
+}
+@media (max-width: 425px) {
+  .Posts {
+    padding-top: 50px;
+    width: 92%;
+    margin: 0 auto;
+  }
 }
 </style>

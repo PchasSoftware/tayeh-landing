@@ -43,7 +43,6 @@ export default {
 }
 .Footer > .container {
   width: 45%;
-  /* border: 1px solid #ccc; */
   margin: 0 auto;
 }
 .Footer > .container > .nav {
@@ -70,14 +69,37 @@ export default {
   background-size: cover;
   margin: 0 auto;
 }
-.Footer > .container .last-line{
-    align-items: center;
+.Footer > .container .last-line {
+  align-items: center;
+  position: relative;
+  right: 15px;
 }
-.Footer > .container .heart{
-    width: 25px;
-    height: 25px;
-    background: url('../../assets/images/love.svg') no-repeat;
-    background-position: center;
-    background-size: cover;
+.Footer > .container .heart {
+  width: 25px;
+  height: 25px;
+  background: url("../../assets/images/love.svg") no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 1024px) {
+  .Footer > .container {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .Footer > .container {
+    width: 80%;
+  }
+  .Footer > .container > .nav {
+    justify-content: space-around;
+  }
+}
+@media (max-width: 425px) {
+  .Footer{
+    margin-top: 70px;
+  }
+  .Footer > .container {
+    width: 90%;
+  }
 }
 </style>
