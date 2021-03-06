@@ -15,13 +15,19 @@
           </div>
         </div>
         <div class="arrows ty-flex ty-gap-10">
-          <ty-button class="arrow-ic" radius="10px" icon="ty-icon-arrow-right" @click="rightHandler"/>
-          <ty-button class="arrow-ic" radius="10px" icon="ty-icon-arrow-left" @click="leftHandler"/>
+          <ty-button
+            class="right-icon arrow-ic"
+            radius="10px"
+            icon="ty-icon-arrow-right"
+            @click="rightHandler"
+          />
+          <ty-button
+            class="left-icon arrow-ic"
+            radius="10px"
+            icon="ty-icon-arrow-left"
+            @click="leftHandler"
+          />
         </div>
-        <!-- <div class="arrows ty-flex">
-          <div class="right-icon arrow-ic" @click="rightHandler"></div>
-          <div class="left-icon arrow-ic" @click="leftHandler"></div>
-        </div> -->
       </div>
     </div>
     <div class="bottom-section ty-flex">
@@ -81,17 +87,17 @@ export default {
         this.right = this.right + 100;
       }
     },
-    getBusinesses () {
+    getBusinesses() {
       this.businesses = BusinessesObject.businesses;
     },
-    getStates () {
+    getStates() {
       this.states = BusinessesObject.states;
-    }
+    },
   },
   mounted() {
-    this.getBusinesses()
-    this.getStates()
-  }
+    this.getBusinesses();
+    this.getStates();
+  },
 };
 </script>
 
@@ -180,18 +186,10 @@ export default {
 }
 .Businesses > .bottom-section .btn-start {
   color: #ffffff;
-  /* border-radius: 10px; */
+  border-radius: 10px;
   padding: 17px 27px;
-  border: none;
   background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid;
-  border-image-source: linear-gradient(
-    to right,
-    #ffffff,
-    rgba(133, 198, 255, 0),
-    rgba(255, 255, 255, 0.86)
-  );
-  border-image-slice: 1;
+  border: 2px solid #ffffff;
   margin-bottom: 60px;
 }
 @media (max-width: 1100px) {
@@ -285,11 +283,8 @@ export default {
     background-color: #ebeff8;
     opacity: 1;
   }
-  .Businesses > .top-section > .left-side > .arrows > .arrow-ic.right-icon {
-    background-image: url("../../../assets/images/arrow_forward_blue.svg");
-  }
-  .Businesses > .top-section > .left-side > .arrows > .arrow-ic.left-icon {
-    background-image: url("../../../assets/images/arrow_back_blue.svg");
+  .Businesses > .top-section > .left-side > .arrows > .arrow-ic {
+    color: #409eff;
   }
   .Businesses > .bottom-section {
     height: 490px;
@@ -308,6 +303,10 @@ export default {
     .Businesses > .bottom-section .jobs {
       display: block;
       padding-top: 45px;
+    }
+    .Businesses > .top-section > .right-side > .par {
+      margin-top: 7px !important;
+      line-height: 24px;
     }
   }
 }

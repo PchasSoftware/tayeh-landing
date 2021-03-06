@@ -68,8 +68,8 @@ export default {
 }
 @media (max-width: 425px) {
   .Slider {
-  overflow:hidden;
-}
+    overflow: hidden;
+  }
   .Slider > .gallery > .slide > .summary {
     display: block;
   }
@@ -77,11 +77,14 @@ export default {
     padding: 0;
     text-align: center;
   }
-  .Slider > .gallery > .slide .img-part{
+  .Slider > .gallery > .slide .img-part {
     position: relative;
     right: 50%;
     transform: translateX(50%);
     margin: 10px 0;
+  }
+  .Slider > .gallery > .slide > .par {
+    line-height: 24pxpx;
   }
 }
 </style>

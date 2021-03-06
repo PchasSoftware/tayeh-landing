@@ -64,8 +64,18 @@ export default {
   line-height: 30px;
 }
 .PhotoPost .img-part > img {
-  width: 100%;
+  width: 75%;
   height: 100%;
+}
+@media (max-width: 1024px) {
+  .PhotoPost .img-part > img {
+    width: 85%;
+  }
+}
+@media (max-width: 768px) {
+  .PhotoPost .img-part > img {
+    width: 100%;
+  }
 }
 @media (max-width: 425px) {
   .PhotoPost {
@@ -88,7 +98,8 @@ export default {
     margin: 0 auto;
     font-size: 14px;
     text-align: center;
-    margin-top: 10px !important;
+    margin-top: 7px !important;
+    line-height: 26px;
   }
   .PhotoPost .img-part {
     margin-top: 20px;

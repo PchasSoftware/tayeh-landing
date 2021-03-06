@@ -6,9 +6,9 @@
         تایه به کسب و کار شما کمک میکند تا بهینه فعالیت کنید<br />و تمام کارهای
         خود را در یک بستر انجام دهید.
       </p>
-      <button class="btn-service fs-18 fw-300 mt-2">
-        <a href="#Services">تایه چه خدماتی میده؟</a>
-      </button>
+      <a href="#Services" class="btn-service fs-18 fw-300 mt-2"
+        >تایه چه خدماتی میده؟
+      </a>
     </div>
     <div class="img-part"></div>
   </div>
@@ -42,16 +42,15 @@ export default {};
   line-height: 34px;
 }
 .HeaderView > .define > .btn-service {
+  display: inline-block;
   background-color: #f1f6ff;
   border: none;
   padding: 12px 48px 12px 20px;
   border-radius: 10px;
   background-image: url("../../../assets/images/arrow_downward.svg");
   background-repeat: no-repeat;
-  background-position: 92% 50%;
-}
-.HeaderView > .define > .btn-service > a {
   color: #409eff;
+  background-position: 92% 50%;
 }
 @media (max-width: 1270px) {
   .HeaderView > .define {
@@ -101,17 +100,22 @@ export default {};
   }
   .HeaderView > .define > .btn-service {
     font-size: 12px;
-    margin-top: 0 !important;
   }
   @media (max-width: 425px) {
     .HeaderView > .define {
       text-align: right;
     }
     .HeaderView > .img-part {
-    height: 320px;
-    background-size: contain;
+      height: 320px;
+      background-size: contain;
+    }
+    .HeaderView > .define > .par {
+      line-height: 24px;
+    }
+    .HeaderView > .define > .def-head{
+      margin-bottom: 0;
+      line-height: 36px;
+    }
   }
-  }
-
 }
 </style>
