@@ -1,10 +1,18 @@
 <template>
   <div class="PhotoPost ty-flex ty-flex-wrap">
     <div :class="['side-width', order === 'right' ? 'right' : 'order-2']">
-      <h3 class="post-head fs-22 fw-500 mb-0">
+      <h3
+        :class="[
+          'post-head',
+          'fs-22',
+          'fw-500',
+          'mb-0',
+          order === 'right' ? 'mr-auto' : '',
+        ]"
+      >
         {{ title }}
       </h3>
-      <p class="fw-300 par mt-3">
+      <p :class="['fw-300', 'par', 'mt-3', order === 'right' ? 'mr-auto' : '']">
         {{ explain }}
       </p>
     </div>
@@ -44,7 +52,7 @@ export default {
   padding: 0 25px;
 }
 .PhotoPost > .right {
-  direction: ltr;
+  text-align: left;
 }
 .order-1 {
   order: 1;
@@ -60,7 +68,7 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 .PhotoPost > .side-width > .par {
-  max-width: 265px;
+  max-width: 275px;
   line-height: 30px;
 }
 .PhotoPost .img-part > img {

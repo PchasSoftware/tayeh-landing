@@ -1,11 +1,13 @@
 <template>
   <div class="Businesses">
     <div class="top-section ty-flex ty-flex-wrap">
-      <div class="right-side pt-4">
-        <h3 class="post-head fs-22 fw-500 mb-0">کسب و کارهای برتر تایه</h3>
-        <p class="fw-300 par mt-3">
+      <div class="right-side pt-4 text-left">
+        <h3 class="post-head fs-22 fw-500 mb-0 mr-auto">
+          کسب و کارهای برتر تایه
+        </h3>
+        <p class="fw-300 par mt-3 mr-auto">
           داستان کسب و کارهایی که از تایه استفاده کرده اند را میتوانید در این
-          بخش بخوانید؛ جای شما در این بخش خالیست
+          بخش بخوانید؛ جای شما در این بخش خالیست...
         </p>
       </div>
       <div class="left-side">
@@ -115,13 +117,10 @@ export default {
 .Businesses > .top-section > .right-side {
   width: 43%;
   padding: 0 25px;
-  direction: ltr;
-  /* border: 1px solid #ccc; */
 }
 .Businesses > .top-section > .left-side {
   width: 57%;
   padding: 0 25px;
-  /* border: 1px solid #ccc; */
   position: relative;
 }
 .Businesses > .top-section > .right-side > .post-head {

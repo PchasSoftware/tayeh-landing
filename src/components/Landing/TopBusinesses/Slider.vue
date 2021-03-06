@@ -84,7 +84,7 @@ export default {
     margin: 10px 0;
   }
   .Slider > .gallery > .slide > .par {
-    line-height: 24pxpx;
+    line-height: 26px;
   }
 }
 </style>
