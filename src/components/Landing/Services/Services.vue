@@ -13,7 +13,7 @@
         :md="6"
         :lg="6"
         :xl="6"
-        v-for="(item, index) in servs"
+        v-for="(item, index) in services"
         :key="index"
       >
         <Service :title="item.title" :explain="item.explain" :img="item.img" />
@@ -24,6 +24,7 @@
 
 <script>
 import Service from "./Service";
+import ServicesObject from "../../../assets/jsons/Services.json";
 export default {
   name: "FullHeader",
   components: {
@@ -31,34 +32,17 @@ export default {
   },
   data() {
     return {
-      servs: [
-        {
-          title: "فروشگاه مجازی",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_shop.svg",
-        },
-        {
-          title: "حسابداری",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_payment.svg",
-        },
-        {
-          title: "انبارداری",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_cart_feed.svg",
-        },
-        {
-          title: "مدیریت مشتری ها",
-          explain:
-            "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است.",
-          img: "landing_computer.svg",
-        },
-      ],
+      services: [],
     };
   },
+  methods: {
+    getServices() {
+      this.services = ServicesObject;
+    }
+  },
+  mounted() {
+    this.getServices()
+  }
 };
 </script>
 

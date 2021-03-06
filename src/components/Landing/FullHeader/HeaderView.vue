@@ -13,11 +13,6 @@
     <div class="img-part"></div>
   </div>
 </template>
-
-<script>
-export default {};
-</script>
-
 <style scoped>
 .HeaderView > .img-part {
   height: 580px;

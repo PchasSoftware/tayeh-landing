@@ -1,11 +1,11 @@
 <template>
   <div>
-    <FullHeader v-once/>
-    <Services/>
-    <Posts/>
-    <Businesses/>
-    <Blog/>
-    <Footer v-once/>
+    <FullHeader/>
+    <Services v-if="!loading"/>
+    <Posts v-if="!loading"/>
+    <Businesses v-if="!loading"/>
+    <Blog v-if="!loading"/>
+    <Footer/>
   </div>
 </template>
 
@@ -27,5 +27,17 @@ export default {
     Businesses,
     Footer
   },
+  data () {
+    return {
+      loading: true
+    }
+  },
+  mounted() {
+    document.onreadystatechange = () => {
+      if (document.readyState == 'complete') {
+        this.loading = false;
+      }
+    }
+  }
 };
 </script>

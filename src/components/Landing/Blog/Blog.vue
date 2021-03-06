@@ -1,6 +1,6 @@
 <template>
   <div class="Blog">
-    <div class="title text-center mb-5">
+    <div v-if="page_loaded" class="title text-center mb-5">
       <h2 class="fw-500 my-0">آخرین مطالب</h2>
       <p class="fw-300 mt-2">
         آموزش های کار با پنل و اخبار تایه را در این بخش بخوانید
@@ -49,8 +49,13 @@ export default {
       this.BPosts = BlogPostObjects;
     },
   },
+  computed: {
+    page_loaded() {
+      return document.readyState == 'complete';
+    }
+  },
   mounted() {
-    this.getBPosts();
+    this.getBPosts()
   }
 };
 </script>
