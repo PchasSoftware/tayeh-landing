@@ -238,7 +238,7 @@ export default {
   .Businesses > .top-section > .right-side {
     width: 100%;
     direction: rtl;
-    text-align: center;
+    text-align: center !important;
     padding: 0;
   }
   .Businesses > .top-section > .left-side {
