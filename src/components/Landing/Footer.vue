@@ -9,9 +9,9 @@
         </li>
       </ul>
       <div class="mt-4 text-center">
-        <router-link to="https://pchas.ir">
+        <a href="https://pchas.ir" target="_blank">
           <img alt="پیچاز" width="185" src="https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/pchas.svg"/>
-        </router-link>
+        </a>
         <div class="fs-12 fw-300 mt-3">
           <span>طراحی شده با</span>
           <i class="ty-icon ty-icon-heart fs-10 ty-color-danger mx-2"/>
