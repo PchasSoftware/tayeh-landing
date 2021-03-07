@@ -3,14 +3,15 @@
     <div class="container">
       <ul class="nav ty-flex ty-flex-wrap ty-space-between">
         <li class="nav-item" v-for="(it, index) in items" :key="index">
-          {{ it }}
+        <router-link :to="it.link">
+          {{ it.label }}
+        </router-link>
         </li>
       </ul>
-      <div class="mt-4">
-        <div class="pchas-part"></div>
-        <div class="ty-flex fs-12 fw-300 last-line ty-justify-center mt-3">
-          <span>طراحی شده با </span>
-          <!-- <div class="heart"></div> -->
+      <div class="mt-4 text-center">
+        <img alt="پیچاز" width="185" src="https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/pchas.svg"/>
+        <div class="fs-12 fw-300 mt-3">
+          <span>طراحی شده با</span>
           <i class="ty-icon ty-icon-heart fs-10 ty-color-danger mx-2"/>
           <span>در استودیو پیچاز</span>
         </div>
@@ -25,12 +26,12 @@ export default {
   data() {
     return {
       items: [
-        "تعرفه ها",
-        "برای توسعه دهندگان",
-        "پشتیبانی",
-        "مستندات",
-        "درباره ما",
-        "تماس با ما",
+        {label: "تعرفه ها", link: "/prices"},
+        {label: "برای توسعه دهندگان", link: "/login?next=/developers"},
+        {label: "پشتیبانی", link: "/support"},
+        {label: "مستندات", link: "/docs"},
+        {label: "درباره ما", link: "/about-us"},
+        // {label: "تماس با ما", link: "/contact-us"},
       ],
     };
   },
@@ -52,28 +53,19 @@ export default {
   margin: 0;
 }
 .Footer > .container > .nav > .nav-item {
+  text-decoration: none;
   padding: 15px 10px;
   border-top: 2px solid transparent;
   font-size: 14px;
   font-weight: 300px;
   transition: 0.5s;
 }
+.nav-item a:hover {
+  text-decoration: none;
+}
 .Footer > .container > .nav > .nav-item:hover {
   color: #0e7cd7;
   border-top: 2px solid #0e7cd7;
-}
-.Footer > .container .pchas-part {
-  width: 185px;
-  height: 54px;
-  background: url("https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/pchas.svg")
-    no-repeat;
-  background-size: cover;
-  margin: 0 auto;
-}
-.Footer > .container .last-line {
-  align-items: center;
-  position: relative;
-  right: 15px;
 }
 @media (max-width: 1024px) {
   .Footer > .container {

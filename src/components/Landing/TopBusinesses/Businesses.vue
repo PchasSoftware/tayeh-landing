@@ -48,8 +48,11 @@
         <p class="bottom-par fs-20 fw-500 text-center">
           همین حالا به این جمع بپیوندید و فروشگاه خود را حرفه ای مدیریت کنید
         </p>
+        
         <div class="mt-5 text-center">
+          <router-link to="/login">
           <button class="btn-start fs-18 fw-500">رایگان شروع کنید</button>
+          </router-link>
         </div>
       </div>
     </div>
@@ -190,6 +193,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
   border: 2px solid #ffffff;
   margin-bottom: 60px;
+  cursor: pointer;
 }
 @media (max-width: 1100px) {
   .Businesses > .top-section > .left-side > .outer-box {

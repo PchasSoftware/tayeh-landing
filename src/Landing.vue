@@ -29,15 +29,15 @@ export default {
   },
   data () {
     return {
-      loading: true
+      loading: false
     }
   },
-  mounted() {
-    document.onreadystatechange = () => {
-      if (document.readyState == 'complete') {
-        this.loading = false;
-      }
-    }
-  }
+  // mounted() {
+  //   document.onreadystatechange = () => {
+  //     if (document.readyState == 'complete') {
+  //       this.loading = false;
+  //     }
+  //   }
+  // }
 };
 </script>
