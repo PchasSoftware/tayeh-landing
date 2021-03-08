@@ -2,14 +2,14 @@
   <div class="Footer pb-3">
     <div class="container">
       <ul class="nav ty-flex ty-flex-wrap ty-space-between">
-        <router-link
-          class="nav-item"
-          v-for="(it, index) in items"
-          :to="it.link"
-          :key="index"
-        >
-          {{ it.label }}
-        </router-link>
+        <li v-for="(it, index) in items" :key="index">
+          <router-link
+            class="nav-item"
+            :to="it.link"
+          >
+            {{ it.label }}
+          </router-link>
+        </li>
       </ul>
       <div class="mt-4 text-center">
         <a href="https://pchas.ir" target="_blank">
@@ -61,7 +61,8 @@ export default {
   padding: 0;
   margin: 0;
 }
-.Footer > .container > .nav > .nav-item {
+.Footer > .container > .nav .nav-item {
+  display: block;
   text-decoration: none;
   padding: 15px 10px;
   border-top: 2px solid transparent;
@@ -69,10 +70,7 @@ export default {
   font-weight: 300px;
   transition: 0.5s;
 }
-.nav-item a:hover {
-  text-decoration: none;
-}
-.Footer > .container > .nav > .nav-item:hover {
+.Footer > .container > .nav .nav-item:hover {
   color: #0e7cd7;
   border-top: 2px solid #0e7cd7;
 }
