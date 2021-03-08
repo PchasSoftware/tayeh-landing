@@ -2,19 +2,26 @@
   <div class="Footer pb-3">
     <div class="container">
       <ul class="nav ty-flex ty-flex-wrap ty-space-between">
-        <li class="nav-item" v-for="(it, index) in items" :key="index">
-        <router-link :to="it.link">
+        <router-link
+          class="nav-item"
+          v-for="(it, index) in items"
+          :to="it.link"
+          :key="index"
+        >
           {{ it.label }}
         </router-link>
-        </li>
       </ul>
       <div class="mt-4 text-center">
         <a href="https://pchas.ir" target="_blank">
-          <img alt="پیچاز" width="185" src="https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/pchas.svg"/>
+          <img
+            alt="پیچاز"
+            width="185"
+            src="https://static.ty-sb1.tayeh.ir/tayeh-panel/assets/images/pchas.svg"
+          />
         </a>
         <div class="fs-12 fw-300 mt-3">
           <span>طراحی شده با</span>
-          <i class="ty-icon ty-icon-heart fs-10 ty-color-danger mx-2"/>
+          <i class="ty-icon ty-icon-heart fs-10 ty-color-danger mx-2" />
           <span>در استودیو پیچاز</span>
         </div>
       </div>
@@ -28,11 +35,11 @@ export default {
   data() {
     return {
       items: [
-        {label: "تعرفه ها", link: "/prices"},
-        {label: "برای توسعه دهندگان", link: "/login?next=/developers"},
-        {label: "پشتیبانی", link: "/support"},
-        {label: "مستندات", link: "/docs"},
-        {label: "درباره ما", link: "/about-us"},
+        { label: "تعرفه ها", link: "/prices" },
+        { label: "برای توسعه دهندگان", link: "/login?next=/developers" },
+        { label: "پشتیبانی", link: "/support" },
+        { label: "مستندات", link: "/docs" },
+        { label: "درباره ما", link: "/about-us" },
         // {label: "تماس با ما", link: "/contact-us"},
       ],
     };
@@ -83,7 +90,7 @@ export default {
   }
 }
 @media (max-width: 425px) {
-  .Footer{
+  .Footer {
     margin-top: 70px;
   }
   .Footer > .container {
